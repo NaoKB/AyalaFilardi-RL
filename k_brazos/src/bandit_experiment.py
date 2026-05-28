@@ -1,9 +1,6 @@
-from typing import List
 import numpy as np
-from src.algorithms import Algorithm, UCB1, UCB2
-from src.arms import ArmNormal, ArmBinomial, ArmBernoulli, Bandit
+from src.arms import Bandit
 from src.plotting import plot_average_rewards,plot_optimal_selections,plot_arm_statistics,plot_regret
-from src.plotting.plotting import get_algorithm_label
 
 SELECTED_NAME = "selected" ; AVG_REWARD_NAME = "avg_reward" ; IS_OPTIMAL_NAME = "is_optimal"
 REWARDS_NAME = "rewards" ; OPTIMAL_NAME = "optimal" ; REGRET_NAME = "regret"
@@ -75,6 +72,6 @@ class BanditExperiment:
             } for arm_idx in range(bandit.k)
         } for algo_idx in range(len(algorithm_labels))]
     
-    def plot_arm_statistics(bandit, result, algorithms):
+    def plot_arm_statistics(bandit, result, algorithms, name):
         arm_stats = BanditExperiment.build_arm_stats(bandit, result[COUNTS_NAME], result[VALUES_NAME], algorithms)
         plot_arm_statistics(arm_stats, algorithms, f"Estadísticas por Brazo - {name}")
