@@ -45,12 +45,6 @@ En Colab, abre cualquiera de los notebooks y ejecuta todas las celdas. Cada
 notebook localiza la raíz del proyecto y, si es necesario, intenta clonar el
 repositorio configurado en `REPO_URL`.
 
-En local, desde esta carpeta:
-
-```powershell
-py -m pip install numpy pandas matplotlib ipython
-```
-
 Orden recomendado:
 
 1. `Greedy.ipynb`
